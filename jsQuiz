@@ -1,11 +1,11 @@
 const topNStudentsAttendees = (students, attendees, N) => {
-    const studentToCountMap = {}
+    const studentToCountMap = {};
 	students.forEach(student => {
-        studentToCountMap[student] = 0
+        studentToCountMap[student] = 0;
         attendees.forEach(lecture => {
-            if(lecture.find(name=>name === student)) studentToCountMap[student]++
+            if(lecture.find(name=>name === student)) studentToCountMap[student]++;
         })
     })
-    const sortedStudents = Object.keys(studentToCountMap).sort((student1, student2) => studentToCountMap[student1]-studentToCountMap[student2])
-    return sortedStudents.slice(N)
+    const sortedStudents = Object.keys(studentToCountMap).sort((student1, student2) => studentToCountMap[student1]-studentToCountMap[student2]);
+    return sortedStudents.slice(N);
 }
